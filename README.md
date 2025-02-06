@@ -1,39 +1,102 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Number Picker
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A customizable **Number Picker** package for Flutter, providing both **Horizontal** and **Vertical** number pickers with smooth scrolling and optional vibration feedback.
 
 ## Features
+✅ Horizontal and Vertical pickers  
+✅ Customizable styles and colors  
+✅ Vibration feedback support  
+✅ Supports minimum, maximum, and step values  
+✅ Optional labels and arrow indicators  
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## Installation
+Add the following dependency to your `pubspec.yaml` file:
 
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  number_picker: latest_version
+```
+Then, run:
+```sh
+flutter pub get
 ```
 
-## Additional information
+## Demo
+### Horizontal Number Picker  
+![Horizontal Number Picker]<img src="https://raw.githubusercontent.com/AmirmahdiNourkazemi/number_picker/main/1.gif" alt="Animation" width="400">
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+### Vertical Number Picker  
+![Vertical Number Picker]<img src="https://raw.githubusercontent.com/AmirmahdiNourkazemi/number_picker/main/2.gif" alt="Animation" width="400">
+
+## Usage
+### Horizontal Number Picker
+```dart
+HorizontalNumberPicker(
+  minValue: 0,
+  maxValue: 100,
+  step: 1,
+  initialValue: 50,
+  onValueChanged: (value) {
+    print("Selected Value: $value");
+  },
+  viewPort: 0.3,
+  selectedTextStyle: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+  unselectedTextStyle: TextStyle(fontSize: 24, color: Colors.grey),
+  backgroundColor: Colors.white,
+  showLabel: true,
+  label: "Quantity",
+  showArrows: true,
+  enableVibration: true,
+)
+```
+
+### Vertical Number Picker
+```dart
+VerticalNumberPicker(
+  minValue: 1,
+  maxValue: 10,
+  step: 1,
+  initialValue: 5,
+  onValueChanged: (value) {
+    print("Selected Value: $value");
+  },
+  viewPort: 0.3,
+  selectedTextStyle: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+  unselectedTextStyle: TextStyle(fontSize: 24, color: Colors.grey),
+  backgroundColor: Colors.white,
+  borderRadius: BorderRadius.circular(10),
+  showLabel: true,
+  label: "Speed",
+  showArrows: true,
+  enableVibration: true,
+)
+```
+
+## Parameters
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `minValue` | `int` | Minimum selectable value |
+| `maxValue` | `int` | Maximum selectable value |
+| `step` | `int` | Step between values |
+| `initialValue` | `int` | Default selected value |
+| `onValueChanged` | `ValueChanged<int>` | Callback when value changes |
+| `viewPort` | `double` | Fraction of viewport occupied by picker |
+| `selectedTextStyle` | `TextStyle?` | Style for selected value |
+| `unselectedTextStyle` | `TextStyle?` | Style for unselected values |
+| `backgroundColor` | `Color?` | Background color |
+| `borderRadius` | `BorderRadius?` | Corner radius for picker background |
+| `showLabel` | `bool` | Show label text below selected value |
+| `label` | `String?` | Custom label text |
+| `showArrows` | `bool` | Show navigation arrows |
+| `arrowIcon` | `IconData?` | Custom arrow icon |
+| `enableVibration` | `bool` | Enable vibration feedback |
+
+## Contributing
+Contributions are welcome! Feel free to submit a PR or open an issue.
+
+## Contact
+👤 **Amirmahdi Nourkazemi**  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)](https://www.linkedin.com/in/amirmahdi-nourkazemi-04613023a/)  
+
+## License
+This project is licensed under the MIT License.

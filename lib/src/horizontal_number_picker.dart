@@ -29,7 +29,7 @@ class HorizontalNumberPicker extends StatefulWidget {
     required this.step,
     required this.initialValue,
     this.showLabel = true,
-    required this.label,
+    this.label,
     this.showSelectedValue = true,
     required this.onValueChanged,
     required this.viewPort,
