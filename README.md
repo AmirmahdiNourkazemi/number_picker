@@ -22,11 +22,11 @@ flutter pub get
 ```
 
 ## Demo
-### Horizontal Number Picker  
-![Horizontal Number Picker]<img src="https://raw.githubusercontent.com/AmirmahdiNourkazemi/number_picker/main/1.gif" alt="Animation" width="400">
 
-### Vertical Number Picker  
-![Vertical Number Picker]<img src="https://raw.githubusercontent.com/AmirmahdiNourkazemi/number_picker/main/2.gif" alt="Animation" width="400">
+| Horizontal Number Picker | Vertical Number Picker |
+|-------------------------|-------------------------|
+| <img src="https://raw.githubusercontent.com/AmirmahdiNourkazemi/number_picker/main/1.gif" alt="Horizontal Number Picker" width="400"> | <img src="https://raw.githubusercontent.com/AmirmahdiNourkazemi/number_picker/main/2.gif" alt="Vertical Number Picker" width="400"> |
+
 
 ## Usage
 ### Horizontal Number Picker
