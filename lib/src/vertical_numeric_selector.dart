@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:vibration/vibration.dart';
 
-class VerticalNumberPicker extends StatefulWidget {
+class VerticalNumericSelector extends StatefulWidget {
   final int minValue;
   final int maxValue;
   final int step;
@@ -23,7 +23,7 @@ class VerticalNumberPicker extends StatefulWidget {
   final double? width;
   final double? height;
 
-  const VerticalNumberPicker({
+  const VerticalNumericSelector({
     super.key,
     required this.minValue,
     required this.maxValue,
@@ -46,10 +46,10 @@ class VerticalNumberPicker extends StatefulWidget {
   });
 
   @override
-  State<VerticalNumberPicker> createState() => _VerticalNumberPickerState();
+  State<VerticalNumericSelector> createState() => _VerticalNumericSelectorState();
 }
 
-class _VerticalNumberPickerState extends State<VerticalNumberPicker> {
+class _VerticalNumericSelectorState extends State<VerticalNumericSelector> {
   late PageController _pageController;
   late int selectedValue;
 
@@ -68,7 +68,7 @@ class _VerticalNumberPickerState extends State<VerticalNumberPicker> {
   }
 
   @override
-  void didUpdateWidget(covariant VerticalNumberPicker oldWidget) {
+  void didUpdateWidget(covariant VerticalNumericSelector oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.viewPort != widget.viewPort) {
       _pageController.dispose();

@@ -1,12 +1,7 @@
-name: number_picker
-description: "A customizable number picker widget for Flutter that supports both vertical and horizontal scrolling. 
-  The `VerticalNumberPicker` and `HorizontalNumberPicker` allow users to select values from a range with a smooth scrolling interface, 
-  configurable step sizes, and optional vibration feedback. 
-  The widget supports custom styles for selected and unselected values, label display, and arrow icons. 
-  The widget is highly customizable, with options to adjust dimensions, background colors, text styles, and viewport fraction.
-  Ideal for use in scenarios like quantity selection, rating systems, and more."
+name: numeric_selector
+description: "A customizable numeric selector widget for Flutter that supports both vertical and horizontal scrolling."
 version: 0.0.1
-homepage:
+homepage: https://github.com/AmirmahdiNourkazemi/numeric_selector
 
 environment:
   sdk: ^3.5.3

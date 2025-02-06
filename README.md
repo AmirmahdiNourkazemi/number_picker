@@ -1,6 +1,6 @@
-# Number Picker
+# Numeric Selector
 
-A customizable **Number Picker** package for Flutter, providing both **Horizontal** and **Vertical** number pickers with smooth scrolling and optional vibration feedback.
+A customizable **Numeric Selector** package for Flutter, providing both **Horizontal** and **Vertical** Numeric Selector with smooth scrolling and optional vibration feedback.
 
 ## Features
 ✅ Horizontal and Vertical pickers  
@@ -14,7 +14,7 @@ Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  number_picker: latest_version
+  numeric_selector: latest_version
 ```
 Then, run:
 ```sh
@@ -25,17 +25,17 @@ flutter pub get
 
 <div align="center">
 
-| Horizontal Number Picker | Vertical Number Picker |
+| Horizontal Numeric Selector | Vertical Numeric Selector |
 |-------------------------|-------------------------|
-| <img src="https://raw.githubusercontent.com/AmirmahdiNourkazemi/number_picker/main/1.gif" alt="Horizontal Number Picker" width="320"> | <img src="https://raw.githubusercontent.com/AmirmahdiNourkazemi/number_picker/main/2.gif" alt="Vertical Number Picker" width="320"> |
+| <img src="https://raw.githubusercontent.com/AmirmahdiNourkazemi/number_picker/main/1.gif" alt="Horizontal Numeric Selector" width="320"> | <img src="https://raw.githubusercontent.com/AmirmahdiNourkazemi/number_picker/main/2.gif" alt="Vertical Numeric Selector" width="320"> |
 
 </div>
 
 
 ## Usage
-### Horizontal Number Picker
+### Horizontal Numeric Selector
 ```dart
-HorizontalNumberPicker(
+HorizontalNumericSelector(
   minValue: 0,
   maxValue: 100,
   step: 1,
@@ -54,9 +54,9 @@ HorizontalNumberPicker(
 )
 ```
 
-### Vertical Number Picker
+### Vertical Numeric Selector
 ```dart
-VerticalNumberPicker(
+VerticalNumericSelector(
   minValue: 1,
   maxValue: 10,
   step: 1,
