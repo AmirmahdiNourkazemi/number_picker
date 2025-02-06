@@ -23,9 +23,13 @@ flutter pub get
 
 ## Demo
 
+<div align="center">
+
 | Horizontal Number Picker | Vertical Number Picker |
 |-------------------------|-------------------------|
-| <img src="https://raw.githubusercontent.com/AmirmahdiNourkazemi/number_picker/main/1.gif" alt="Horizontal Number Picker" width="400"> | <img src="https://raw.githubusercontent.com/AmirmahdiNourkazemi/number_picker/main/2.gif" alt="Vertical Number Picker" width="400"> |
+| <img src="https://raw.githubusercontent.com/AmirmahdiNourkazemi/number_picker/main/1.gif" alt="Horizontal Number Picker" width="320"> | <img src="https://raw.githubusercontent.com/AmirmahdiNourkazemi/number_picker/main/2.gif" alt="Vertical Number Picker" width="320"> |
+
+</div>
 
 
 ## Usage
