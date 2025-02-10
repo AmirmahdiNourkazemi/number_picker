@@ -3,25 +3,65 @@
 import 'package:flutter/material.dart';
 import 'package:vibration/vibration.dart';
 
+/// A horizontal numeric selector widget that allows users to select a number
+/// within a given range by swiping left or right.
+///
+/// It provides options to customize the appearance, step value, and behavior,
+/// including vibration feedback on selection.
 class HorizontalNumericSelector extends StatefulWidget {
+  /// The minimum value that can be selected.
   final int minValue;
+
+  /// The maximum value that can be selected.
   final int maxValue;
+
+  /// The step interval between selectable values.
   final int step;
+
+  /// The initial value that is selected when the widget is first rendered.
   final int initialValue;
+
+  /// Whether to show a label under the selected value.
   final bool showLabel;
+
+  /// The label text displayed under the selected value (if enabled).
   final String? label;
+
+  /// Whether to display the currently selected value below the selector.
   final bool showSelectedValue;
+
+  /// Callback function triggered when the selected value changes.
   final ValueChanged<int> onValueChanged;
+
+  /// The viewport fraction for the `PageView`, affecting how much of the next
+  /// and previous values are visible.
   final double viewPort;
+
+  /// The text style for the selected value.
   final TextStyle? selectedTextStyle;
+
+  /// The text style for unselected values.
   final TextStyle? unselectedTextStyle;
+
+  /// The text style for the optional label.
   final TextStyle? labelTextStyle;
+
+  /// The background color of the numeric selector.
   final Color? backgroundColor;
+
+  /// The border radius for rounding the edges of the selector.
   final BorderRadius? borderRadius;
+
+  /// Whether to show navigation arrows above the selected value.
   final bool showArrows;
+
+  /// The icon used for the navigation arrow.
   final IconData? arrowIcon;
+
+  /// Whether to enable vibration feedback when changing values.
   final bool enableVibration;
 
+  /// Creates a horizontal numeric selector.
   const HorizontalNumericSelector({
     super.key,
     required this.minValue,
@@ -44,11 +84,15 @@ class HorizontalNumericSelector extends StatefulWidget {
   });
 
   @override
-  State<HorizontalNumericSelector> createState() => _HorizontalNumericSelectorState();
+  State<HorizontalNumericSelector> createState() =>
+      _HorizontalNumericSelectorState();
 }
 
 class _HorizontalNumericSelectorState extends State<HorizontalNumericSelector> {
+  /// The controller for the `PageView` that allows horizontal scrolling.
   late PageController _pageController;
+
+  /// The currently selected numeric value.
   late int selectedValue;
 
   @override
@@ -58,6 +102,7 @@ class _HorizontalNumericSelectorState extends State<HorizontalNumericSelector> {
     _initializePageController();
   }
 
+  /// Initializes the `PageController` with the correct starting page.
   void _initializePageController() {
     _pageController = PageController(
       initialPage: (selectedValue - widget.minValue) ~/ widget.step,
@@ -101,9 +146,10 @@ class _HorizontalNumericSelectorState extends State<HorizontalNumericSelector> {
               itemCount: (widget.maxValue - widget.minValue) ~/ widget.step + 1,
               onPageChanged: (index) async {
                 final newValue = widget.minValue + index * widget.step;
-                if (widget.enableVibration && await Vibration.hasVibrator()) {
+                if (widget.enableVibration && (await Vibration.hasVibrator())) {
                   Vibration.vibrate(duration: 30);
                 }
+
                 setState(() {
                   selectedValue = newValue;
                   widget.onValueChanged(selectedValue);
@@ -148,9 +194,7 @@ class _HorizontalNumericSelectorState extends State<HorizontalNumericSelector> {
                         .titleLarge!
                         .copyWith(fontSize: 32),
               ),
-              const SizedBox(
-                width: 5,
-              ),
+              const SizedBox(width: 5),
               if (widget.showLabel) ...[
                 Text(
                   widget.label ?? '',

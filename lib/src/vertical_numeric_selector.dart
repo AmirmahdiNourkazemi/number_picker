@@ -1,28 +1,63 @@
-// lib/src/vertical_number_picker.dart
-
 import 'package:flutter/material.dart';
 import 'package:vibration/vibration.dart';
 
+/// A vertical number picker that allows users to select values by scrolling.
 class VerticalNumericSelector extends StatefulWidget {
+  /// The minimum selectable value.
   final int minValue;
+
+  /// The maximum selectable value.
   final int maxValue;
+
+  /// The step interval between selectable values.
   final int step;
+
+  /// The initially selected value.
   final int initialValue;
+
+  /// Whether to display the selected value.
   final bool showSelectedValue;
+
+  /// Whether to display the label.
   final bool showLabel;
+
+  /// The label text to display.
   final String? label;
+
+  /// Callback function when the value changes.
   final ValueChanged<int> onValueChanged;
+
+  /// The viewport fraction for the PageView.
   final double viewPort;
+
+  /// The text style for the selected item.
   final TextStyle? selectedTextStyle;
+
+  /// The text style for unselected items.
   final TextStyle? unselectedTextStyle;
+
+  /// The background color of the picker.
   final Color? backgroundColor;
+
+  /// The border radius of the picker.
   final BorderRadius borderRadius;
+
+  /// Whether vibration feedback is enabled.
   final bool enableVibration;
+
+  /// Whether to show arrows next to the selected value.
   final bool showArrows;
+
+  /// The icon for the arrow indicator.
   final IconData? arrowIcon;
+
+  /// The width of the picker.
   final double? width;
+
+  /// The height of the picker.
   final double? height;
 
+  /// Creates a vertical numeric selector widget.
   const VerticalNumericSelector({
     super.key,
     required this.minValue,
@@ -46,7 +81,8 @@ class VerticalNumericSelector extends StatefulWidget {
   });
 
   @override
-  State<VerticalNumericSelector> createState() => _VerticalNumericSelectorState();
+  State<VerticalNumericSelector> createState() =>
+      _VerticalNumericSelectorState();
 }
 
 class _VerticalNumericSelectorState extends State<VerticalNumericSelector> {
@@ -108,9 +144,10 @@ class _VerticalNumericSelectorState extends State<VerticalNumericSelector> {
                   onPageChanged: (index) async {
                     final newValue = widget.minValue + index * widget.step;
                     if (widget.enableVibration &&
-                        await Vibration.hasVibrator()) {
+                        (await Vibration.hasVibrator())) {
                       Vibration.vibrate(duration: 30);
                     }
+
                     setState(() {
                       selectedValue = newValue;
                       widget.onValueChanged(selectedValue);
